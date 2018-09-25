@@ -32,10 +32,10 @@ Annyang soporta múltiples idiomas, no tiene dependencias, pesa solo 2kb y es de
 		    // Agregamos nuestros comandos a annyang.
 		    annyang.addCommands(commandos);
 
-		    //Establecemos el lenguaje, en mi caso es español de México (puedes ver la lista completa de lenguajes soportados aquí).
+		    //Establecemos el lenguaje, en mi caso es español de México.
 		    annyang.setLanguage("es-MX");
 
-		    // Empezmaos a escuchar.
+		    // Empezamos a escuchar.
 		    annyang.start();
 		 }
 	</script>
