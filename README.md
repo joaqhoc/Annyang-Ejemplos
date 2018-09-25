@@ -41,5 +41,40 @@ Annyang soporta múltiples idiomas, no tiene dependencias, pesa solo 2kb y es de
 	</script>
 ```
 
+> Ejemplo 2
+
+```javascript
+	<script>
+		  if (annyang) {
+		    // Definimos nuestro primer comando. Primero escribimos el comando y posteriormente la función a ejecutar.
+		    var commandos = {
+		      'reproducir': function() {
+      
+			    var waitTime = 150;
+			    setTimeout(function () {      
+			        if ($('#reproductor').get(0).paused) {
+			          $('#reproductor').get(0).play();
+			        }
+			      }, waitTime);
+			    console.log("reproducir");
+			    },
+			   'pausar': function() {
+			      $('#reproductor').get(0).pause();
+			    console.log("pausar");
+			    }
+		    };
+
+		    // Agregamos nuestros comandos a annyang.
+		    annyang.addCommands(commandos);
+
+		    //Establecemos el lenguaje, en mi caso es español de México (puedes ver la lista completa de lenguajes soportados aquí).
+		    annyang.setLanguage("es-MX");
+
+		    // Empezmaos a escuchar.
+		    annyang.start();
+		 }
+	</script>
+```
+
 
 
