@@ -85,9 +85,32 @@ Annyang soporta múltiples idiomas, no tiene dependencias, pesa solo 2kb y es de
 		  if (annyang) {
 		    // Definimos nuestro primer comando. Primero escribimos el comando y posteriormente la función a ejecutar.
 		    var commandos = {
-		      'facebook': function() {
-		        window.location.href = "https://facebook.com";
-		      	}
+		    	'redes': function() {
+		        document.getElementById("ejemplo3").value = "Redes:";
+		        document.getElementById("ejemplo3").className = "btn btn-lg btn-success btn-block";
+		        document.getElementById("ejemplo3").hidden = "";
+		        document.getElementById("facebook").style.display = 'block';
+		        document.getElementById("facebook").className = "btn btn-lg btn-primary btn-block";
+		        document.getElementById("twitter").style.display = 'block';
+		        document.getElementById("twitter").className = "btn btn-lg btn-danger btn-block";
+		        document.getElementById("youtube").style.display = 'block';
+		        document.getElementById("youtube").className = "btn btn-lg btn-info btn-block";
+		      },
+			    'facebook': function() {
+		        window.location.href = "https://facebook.com/joaquincentu";
+		        document.getElementById("facebook").value = "Redireccionando";
+		        document.getElementById("facebook").className = "btn btn-lg btn-success btn-block";
+		      },
+		      	'twitter': function() {
+		        window.location.href = "https://twitter.com/joaqho";
+		        document.getElementById("twitter").value = "Redireccionando";
+		        document.getElementById("twitter").className = "btn btn-lg btn-success btn-block";
+		      },
+		      	'youtube': function() {
+		        window.location.href = "https://youtube.com/channel/UC96eVw3k0EXT3q6ruaW_pJA";
+		        document.getElementById("youtube").value = "Redireccionando";
+		        document.getElementById("youtube").className = "btn btn-lg btn-success btn-block";
+		      }
 		    };
 
 		    // Agregamos nuestros comandos a annyang.
