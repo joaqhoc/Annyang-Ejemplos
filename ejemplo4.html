@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Joaquin Centurion">
+
+    <title>Ejemplos Annyang · Joaquin Centurion</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/4.1/examples/carousel/carousel.css" rel="stylesheet">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+
+  </head>
+  <body>
+    <script>
+      "use strict";
+      if (annyang) {
+        // Definimos nuestro primer comando. Primero escribimos el comando y posteriormente la función a ejecutar.
+        //api google AIzaSyCer2C9iE2qvsnCOm6cjGlEuYJRvqw18y0
+        //buscador facebook: https://www.facebook.com/search/top/?q=
+        //buscador google: https://www.google.com/search?q=
+        var commandos = {
+
+            'abajo': function() {
+             window.location.href = "#abajo";
+
+          },
+            'arriba': function() {
+            window.location.href = "#";
+
+          },
+            'siguiente': function() {
+            document.getElementById("siguiente").click();
+
+          },
+            'anterior': function() {
+            document.getElementById("anterior").click();
+
+          },
+          'cabecera': function() {
+            window.location.href = "#cabecera_1";
+
+          },
+          'foto uno': function() {
+            window.location.href = "#foto_1";
+
+          },
+          'foto dos': function() {
+            window.location.href = "#foto_2";
+
+          },
+          'foto tres': function() {
+            window.location.href = "#foto_3";
+
+          },
+          'enlace uno': function() {
+            document.getElementById("enlace_1").click();
+
+          },
+          'enlace dos': function() {
+            document.getElementById("enlace_2").click();
+
+          },
+          'enlace tres': function() {
+            document.getElementById("enlace_3").click();
+
+          },
+          'buscar': function() {
+            document.getElementById("buscador").select();
+            document.getElementById("start-record-btn").click();
+
+          },
+          'buscar texto': function() {
+            document.getElementById("enviar").click();
+
+          },
+          'eliminar texto': function cambiaValores() {
+            document.getElementById("buscador").value = "";
+          }
+
+        }
+
+        // OPCIONAL: active el modo de depuración para un registro detallado en la consola
+        annyang.debug();
+
+        // Agregamos nuestros comandos a annyang.
+        annyang.addCommands(commandos);
+
+        //Establecemos el lenguaje, en mi caso es español de México (puedes ver la lista completa de lenguajes soportados aquí).
+        annyang.setLanguage("es-MX");
+
+        // Empezmaos a escuchar.
+        annyang.start();
+     } else {
+    $(document).ready(function() {
+      $('#unsupported').fadeIn('fast');
+    });
+  }
+
+     var scrollTo = function(identifier, speed) {
+    $('html, body').animate({
+        scrollTop: $(identifier).offset().top
+    }, speed || 1000);
+  }
+  </script>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Annyang & Bootstrap4</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://github.com/joaqhoc/Annyang-Ejemplos">GitHub</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Joaquin Centurion</a>
+            </li>
+          </ul>
+          <form class="form-inline mt-2 mt-md-0" method="GET" action="http://www.google.com/search">
+            <input id="buscador" name="q" class="form-control mr-sm-2" placeholder="Buscar">
+            <button id="enviar" class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+
+    <main role="main">
+
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Primer contenido">
+            <div class="container">
+              <div class="carousel-caption text-left">
+                <h1>Enlace 1</h1>
+                <p>Prueba diciendo "enlace uno" para ir al enlace de ejemplos de Annyang con Bootstrap.</p>
+                <p><a id="enlace_1" class="btn btn-lg btn-primary" href="https://github.com/joaqhoc/Annyang-Ejemplos" role="button">Más ejemplos aqui!</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Segundo contenido">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Enlace 2</h1>
+                <p>Prueba diciendo "enlace dos" para ir a mi fanpage en facebook</p>
+                <p><a id="enlace_2" class="btn btn-lg btn-primary" href="https://www.facebook.com/JCDesingyWebMaster/" role="button">JC WebMaster Facebook</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Tercer contenido">
+            <div class="container">
+              <div class="carousel-caption text-right">
+                <h1>Enlace 3</h1>
+                <p>Prueba diciendo "enlace tres" para ir a google con la busqueda "Annyang".</p>
+                <p><a class="btn btn-lg btn-primary" href="https://www.google.com/search?newwindow=1&source=hp&ei=bWm1W_nxBoqhwgST4pUo&q=Annyang&oq=Annyang" role="button">Google Annyang</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev" id="anterior">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next" id="siguiente">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Siguiente</span>
+        </a>
+      </div>
+
+
+
+      <div class="container marketing">
+
+        <div class="row">
+          <div class="col-lg-4" id="cabecera_1">
+            <img class="rounded-circle" src="https://i52.servimg.com/u/f52/12/98/31/84/sin_tz11.jpg" alt="Generic placeholder image" width="140" height="140">
+            <h2>Annyang</h2>
+            <p>Gracias a la libreria Annyang se puede lograr muchas acciones en el sitio web solo con decir unas palabras, es un gran avance para la tecnologia y para el inicio de una accesibilidad para todos.</p>
+            <p><a class="btn btn-secondary" href="#" role="button">Ver detalles &raquo;</a></p>
+          </div>
+          <div class="col-lg-4">
+            <img class="rounded-circle" src="https://i52.servimg.com/u/f52/12/98/31/84/sin_tz12.jpg" alt="Generic placeholder image" width="140" height="140">
+            <h2>Bootstrap</h2>
+            <p>Bootstrap posee gran variedad de recursos y accesibilidad para crear sitios profesionales como básicos para el uso de empresas o personal, se puede desarrollar en muchas plataformas sin limite de uso! </p>
+            <p><a class="btn btn-secondary" href="#" role="button">Ver detalles &raquo;</a></p>
+          </div>
+          <div class="col-lg-4">
+            <img class="rounded-circle" src="https://i52.servimg.com/u/f52/12/98/31/84/sin_tz13.jpg" alt="Generic placeholder image" width="140" height="140">
+            <h2>GitHub</h2>
+            <p>Desde mi GitHub podras encontrar gran variedad de proyectos que llevo a cabo, desde proyectos de php, javascripts, vb, etc. Pero siempre llevo actualizando a diario mis proyectos!.</p>
+            <p><a class="btn btn-secondary" href="https://github.com/joaqhoc" role="button">Ver detalles &raquo;</a></p>
+          </div>
+        </div>
+
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette" id="foto_1">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">Imagen 1. <span class="text-muted">"Imagen uno"</span></h2>
+            <p class="lead">Con el comando de voz al decir Imagen uno, te llevara a esta imagen o contenido de imagen.</p>
+          </div>
+          <div class="col-md-5">
+            <img class="featurette-image img-fluid mx-auto" src="https://content.invisioncic.com/r257993/monthly_2017_08/B.png.bb1420d78960d4dc1686dc81d3c25ca2.png" alt="Generic placeholder image">
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette" id="foto_2">
+          <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">Imagen 2. <span class="text-muted">"Imagen dos"</span></h2>
+            <p class="lead">Con el comando de voz al decir Imagen dos, te llevara a esta imagen o contenido de imagen.</p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img class="featurette-image img-fluid mx-auto" src="https://content.invisioncic.com/r273350/monthly_2017_07/A.png.ef12c9b45b6f83660049810c389a03a9.png" alt="Generic placeholder image">
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette" id="foto_3">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">Imagen 3. <span class="text-muted">"Imagen tres"</span></h2>
+            <p class="lead">Con el comando de voz al decir Imagen tres, te llevara a esta imagen o contenido de imagen.</p>
+          </div>
+          <div class="col-md-5">
+            <img class="featurette-image img-fluid mx-auto" src="http://www.manxforums.com/forums/uploads/monthly_2017_10/J.png.c3f45b03ce5d21783cdfdac53b0e0992.png" alt="Generic placeholder image">
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+
+      </div>
+
+
+      <footer class="container" id="abajo">
+        <button class="btn btn-outline-success my-2 my-sm-0" id="start-record-btn" title="Start Recording">Iniciar</button>
+        <p id="recording-instructions">Iniciar <strong>Reconocimiento de voz</strong>.</p>
+        <p class="float-right"><a href="#" id="arriba">Ir Arriba</a></p>
+        <p>&copy; 2015-2018 JCWebMaster. &middot;</p>
+      </footer>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/holder.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
